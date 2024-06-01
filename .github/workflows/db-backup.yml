@@ -4,6 +4,15 @@ on:
   schedule:
     - cron: "0 0 * * *"
   workflow_dispatch:
+env:
+  host: ${{ secrets.HOST }}
+  port: ${{ secrets.PORT }}
+  db_user: ${{ secrets.DB_USER }}
+  db_pass: ${{ secrets.DB_PASS }}
+  db_name: ${{ secrets.DB_NAME }}
+  zip_pass: ${{ secrets.ZIP_PASS }}
+  tg_bot_token: ${{ secrets.TG_BOT_TOKEN }}
+  tg_chat_id: ${{ secrets.TG_CHAT_ID }}
 
 jobs:
   db_backup:
