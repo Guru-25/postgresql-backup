@@ -12,6 +12,10 @@ env:
   zip_pass: ${{ secrets.ZIP_PASS }}
   tg_bot_token: ${{ secrets.TG_BOT_TOKEN }}
   tg_chat_id: ${{ secrets.TG_CHAT_ID }}
+  CONFIGFILE_VERSION: ${{ OAUTH_REFRESH_TOKEN }}
+  OAUTH_APP_KEY: ${{ OAUTH_REFRESH_TOKEN }}
+  OAUTH_APP_SECRET: ${{ OAUTH_REFRESH_TOKEN }}
+  OAUTH_REFRESH_TOKEN: ${{ OAUTH_REFRESH_TOKEN }}
 
 jobs:
   db_backup:
@@ -25,7 +29,7 @@ jobs:
       - name: Install Dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y mariadb-client zip
+          sudo apt-get install -y mariadb-client zip git
       - name: Run Shell Script
         id: shell_script_run
-        run: bash ./db-backup.sh
+        run: bash ./test.sh
