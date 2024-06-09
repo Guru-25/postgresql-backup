@@ -2,4 +2,4 @@
 Backup MySQL Database
 
 ## What it does?
-Sends database dump to your Dropbox
+Upload database dump to your Dropbox
