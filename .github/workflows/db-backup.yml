@@ -10,9 +10,9 @@ env:
   db_pass: ${{ secrets.DB_PASS }}
   db_name: ${{ secrets.DB_NAME }}
   zip_pass: ${{ secrets.ZIP_PASS }}
-  OAUTH_APP_KEY: ${{ secrets.OAUTH_APP_KEY }}
-  OAUTH_APP_SECRET: ${{ secrets.OAUTH_APP_SECRET }}
-  OAUTH_REFRESH_TOKEN: ${{ secrets.OAUTH_REFRESH_TOKEN }}
+  OAUTH_APP_KEY: ${{ secrets.DROPBOX_APP_KEY }}
+  OAUTH_APP_SECRET: ${{ secrets.DROPBOX_APP_SECRET }}
+  OAUTH_REFRESH_TOKEN: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
 
 jobs:
   db_backup:
