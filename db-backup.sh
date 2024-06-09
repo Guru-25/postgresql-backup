@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mariadb-dump --no-tablespaces -h "${host}" -P ${port} -u "${user}" -p"${password}" "${database_name}" > temp.sql
+mariadb-dump --no-tablespaces -h "${host}" -P ${port} -u "${username}" -p"${password}" "${database_name}" > temp.sql
 current_time="$(date "+%Y-%m-%d_%H-%M-%S")"
 file_name="${database_name}_${current_time}"
 mv temp.sql "${file_name}.sql"
