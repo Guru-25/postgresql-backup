@@ -12,6 +12,7 @@ env:
   zip_pass: ${{ secrets.ZIP_PASS }}
   tg_bot_token: ${{ secrets.TG_BOT_TOKEN }}
   tg_chat_id: ${{ secrets.TG_CHAT_ID }}
+  CONFIGFILE_VERSION: ${{ secrets.CONFIGFILE_VERSION }}
   OAUTH_APP_KEY: ${{ secrets.OAUTH_APP_KEY }}
   OAUTH_APP_SECRET: ${{ secrets.OAUTH_APP_SECRET }}
   OAUTH_REFRESH_TOKEN: ${{ secrets.OAUTH_REFRESH_TOKEN }}
