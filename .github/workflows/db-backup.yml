@@ -6,10 +6,10 @@ on:
 env:
   host: ${{ secrets.HOST }}
   port: ${{ secrets.PORT }}
-  db_user: ${{ secrets.DB_USER }}
-  db_pass: ${{ secrets.DB_PASS }}
-  db_name: ${{ secrets.DB_NAME }}
-  zip_pass: ${{ secrets.ZIP_PASS }}
+  user: ${{ secrets.USER }}
+  password: ${{ secrets.PASSWORD }}
+  database_name: ${{ secrets.DATABASE_NAME }}
+  zip_password: ${{ secrets.ZIP_PASSWORD }}
   dropbox_app_key: ${{ secrets.DROPBOX_APP_KEY }}
   dropbox_app_secret: ${{ secrets.DROPBOX_APP_SECRET }}
   dropbox_refresh_token: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
