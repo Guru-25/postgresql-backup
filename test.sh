@@ -3,11 +3,11 @@
 # Get the date 7 days ago. Used to delete the redundant backup file.
 old_date=$(date +"%Y-%m-%d" --date="7 days ago")
 
-echo "CONFIGFILE_VERSION=2.0" > "~/.dropbox_uploader"
-echo "OAUTH_APP_KEY=$OAUTH_APP_KEY" >> "~/.dropbox_uploader"
-echo "OAUTH_APP_SECRET=$OAUTH_APP_SECRET" >> "~/.dropbox_uploader"
-echo "OAUTH_REFRESH_TOKEN=$OAUTH_REFRESH_TOKEN" >> "~/.dropbox_uploader"
-echo "   The configuration has been saved."
+echo "CONFIGFILE_VERSION=2.0" > ~/.dropbox_uploader
+echo "OAUTH_APP_KEY=${OAUTH_APP_KEY}" >> ~/.dropbox_uploader
+echo "OAUTH_APP_SECRET=${OAUTH_APP_SECRET}" >> ~/.dropbox_uploader
+echo "OAUTH_REFRESH_TOKEN=${OAUTH_REFRESH_TOKEN}" >> ~/.dropbox_uploader
+echo "The configuration has been saved."
 
 git clone https://github.com/andreafabrizi/Dropbox-Uploader
 echo "git cloned"
