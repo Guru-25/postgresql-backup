@@ -6,7 +6,7 @@ on:
 env:
   host: ${{ secrets.HOST }}
   port: ${{ secrets.PORT }}
-  user: ${{ secrets.USER }}
+  username: ${{ secrets.USERNAME }}
   password: ${{ secrets.PASSWORD }}
   database_name: ${{ secrets.DATABASE_NAME }}
   zip_password: ${{ secrets.ZIP_PASSWORD }}
