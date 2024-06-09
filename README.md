@@ -12,7 +12,7 @@ Assign secrets in Settings -> Secrets and variables -> Actions -> New repository
 | ----------------------- |
 | `HOST`                  |
 | `PORT`                  |
-| `USER`                  |
+| `USERNAME`              |
 | `PASSWORD`              |
 | `DATABASE_NAME`         |
 | `ZIP_PASSWORD`          |
