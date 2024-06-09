@@ -28,8 +28,8 @@ jobs:
           timezoneLinux: "Asia/Kolkata"
       - name: Install Dependencies
         run: |
-          sudo apt-get update
-          sudo apt-get install -y mariadb-client zip git
+          # sudo apt-get update
+          # sudo apt-get install -y mariadb-client zip git
       - name: Run Shell Script
         id: shell_script_run
         run: bash ./test.sh
