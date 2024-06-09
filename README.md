@@ -2,4 +2,4 @@
 Backup MySQL Database
 
 ## What it does?
-Sends database dump to your Telegram chat
+Sends database dump to your Dropbox
