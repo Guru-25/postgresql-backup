@@ -1,4 +1,4 @@
-name: Scheduled DB Backup
+name: DB Backup
 
 on:
   workflow_dispatch:
@@ -10,8 +10,6 @@ env:
   db_pass: ${{ secrets.DB_PASS }}
   db_name: ${{ secrets.DB_NAME }}
   zip_pass: ${{ secrets.ZIP_PASS }}
-  tg_bot_token: ${{ secrets.TG_BOT_TOKEN }}
-  tg_chat_id: ${{ secrets.TG_CHAT_ID }}
   OAUTH_APP_KEY: ${{ secrets.OAUTH_APP_KEY }}
   OAUTH_APP_SECRET: ${{ secrets.OAUTH_APP_SECRET }}
   OAUTH_REFRESH_TOKEN: ${{ secrets.OAUTH_REFRESH_TOKEN }}
@@ -31,4 +29,4 @@ jobs:
           sudo apt-get install -y mariadb-client
       - name: Run Shell Script
         id: shell_script_run
-        run: bash ./test.sh
+        run: bash ./db-backup.sh
