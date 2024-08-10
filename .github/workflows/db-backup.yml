@@ -26,7 +26,7 @@ jobs:
       - name: Install Dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y mariadb-client
+          sudo apt-get install -y postgresql-client
       - name: Run Shell Script
         id: shell_script_run
         run: bash ./db-backup.sh
