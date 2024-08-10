@@ -1,5 +1,5 @@
 # mysql-backup
-Backup MySQL Database
+Backup PostgreSQL Database
 
 ## What it does?
 Upload database dump to your Dropbox
