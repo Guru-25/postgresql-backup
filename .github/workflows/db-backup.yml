@@ -23,10 +23,12 @@ jobs:
       - uses: szenius/set-timezone@v2.0
         with:
           timezoneLinux: "Asia/Kolkata"
-      - name: Install Dependencies
+      - name: Install PostgreSQL Client 16
         run: |
+          sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+          wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
           sudo apt-get update
-          sudo apt-get install -y mariadb-client
+          sudo apt-get install -y postgresql-client-16
       - name: Run Shell Script
         id: shell_script_run
         run: bash ./db-backup.sh
