@@ -1,10 +1,10 @@
 #!/bin/bash
 
-PGPASSWORD="${password}" pg_dump -h "${host}" -p "${port}" -U "${username}" -F c -b -v -f temp.dump "${database_name}"
+pg_dump "postgresql://${username}:${password}@${host}:${port}/${database_name}" > temp.sq
 current_time="$(date "+%Y-%m-%d_%H-%M-%S")"
 file_name="${database_name}_${current_time}"
-mv temp.dump "${file_name}.dump"
-zip -e -P "${zip_password}" "${file_name}.zip" "${file_name}.dump" > /dev/null
+mv temp.sql "${file_name}.sql"
+zip -e -P "${zip_password}" "${file_name}.zip" "${file_name}.sql" > /dev/null
 echo "CONFIGFILE_VERSION=2.0" > ~/.dropbox_uploader
 echo "OAUTH_APP_KEY=${dropbox_app_key}" >> ~/.dropbox_uploader
 echo "OAUTH_APP_SECRET=${dropbox_app_secret}" >> ~/.dropbox_uploader
