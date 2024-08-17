@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pg_dump "postgresql://${username}:${password}@${host}:${port}/${database_name}" > temp.sq
+PGPASSWORD="${password}" pg_dump -h "${host}" -p "${port}" -U "${username}" -f temp.sql "${database_name}"
 current_time="$(date "+%Y-%m-%d_%H-%M-%S")"
 file_name="${database_name}_${current_time}"
 mv temp.sql "${file_name}.sql"
