@@ -4,7 +4,7 @@
 PGPASSWORD="${password}" pg_dump -h "${host}" -p "${port}" -U "${username}" -f dump.sql "${database_name}"
 
 # Encrypt the SQL file with PGP
-gpg --encrypt --recipient "${pgp_recipient}" dump.sql
+gpg --trust-model always --encrypt --recipient "${pgp_recipient}" dump.sql
 
 # Dropbox Uploader configuration
 echo "CONFIGFILE_VERSION=2.0" > ~/.dropbox_uploader
