@@ -13,6 +13,8 @@ env:
   dropbox_app_key: ${{ secrets.DROPBOX_APP_KEY }}
   dropbox_app_secret: ${{ secrets.DROPBOX_APP_SECRET }}
   dropbox_refresh_token: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
+  pgp_recipient: ${{ secrets.PGP_RECIPIENT }}
+  pgp_key: ${{ secrets.PGP_KEY }}
 
 jobs:
   db_backup:
