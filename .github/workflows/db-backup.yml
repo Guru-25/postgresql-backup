@@ -9,7 +9,6 @@ env:
   username: ${{ secrets.USERNAME }}
   password: ${{ secrets.PASSWORD }}
   database_name: ${{ secrets.DATABASE_NAME }}
-  zip_password: ${{ secrets.ZIP_PASSWORD }}
   dropbox_app_key: ${{ secrets.DROPBOX_APP_KEY }}
   dropbox_app_secret: ${{ secrets.DROPBOX_APP_SECRET }}
   dropbox_refresh_token: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
