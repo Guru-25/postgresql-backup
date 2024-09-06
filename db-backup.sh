@@ -17,11 +17,11 @@ curl -s "https://raw.githubusercontent.com/andreafabrizi/Dropbox-Uploader/master
 chmod +x dropbox_uploader.sh
 
 # Upload the file to Dropbox
-./dropbox_uploader.sh upload dump.sql.pgp "$(date "+%Y-%m-%d").sql.pgp"
+./dropbox_uploader.sh upload dump.sql.gpg "$(date "+%Y-%m-%d").sql.gpg"
 
 # Delete old backup from Dropbox
-./dropbox_uploader.sh delete "$(date +"%Y-%m-%d" --date="7 days ago").sql.pgp"
+./dropbox_uploader.sh delete "$(date +"%Y-%m-%d" --date="7 days ago").sql.gpg"
 
 # Clean up local files
-rm dump.sql "$(date "+%Y-%m-%d").sql.pgp
+rm dump.sql "$(date "+%Y-%m-%d").sql.gpg"
 
