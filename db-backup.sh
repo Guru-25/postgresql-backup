@@ -1,17 +1,10 @@
 #!/bin/bash
 
 # Dump the PostgreSQL database
-PGPASSWORD="${password}" pg_dump -h "${host}" -p "${port}" -U "${username}" -f temp.sql "${database_name}"
-
-# Get the current time
-current_time="$(date "+%Y-%m-%d_%H-%M-%S")"
-file_name="${database_name}_${current_time}"
+PGPASSWORD="${password}" pg_dump -h "${host}" -p "${port}" -U "${username}" -f dump.sql "${database_name}"
 
 # Encrypt the SQL file with PGP
-gpg --output "${file_name}.sql.gpg" --encrypt --recipient "${pgp_recipient}" temp.sql
-
-# Remove the original SQL file
-rm temp.sql
+gpg --output dump.sql.gpg --encrypt --recipient "${pgp_recipient}" dump.sql
 
 # Dropbox Uploader configuration
 echo "CONFIGFILE_VERSION=2.0" > ~/.dropbox_uploader
@@ -24,10 +17,11 @@ curl -s "https://raw.githubusercontent.com/andreafabrizi/Dropbox-Uploader/master
 chmod +x dropbox_uploader.sh
 
 # Upload the file to Dropbox
-./dropbox_uploader.sh upload "${file_name}.sql.gpg" "$(date "+%Y-%m-%d").zip"
+./dropbox_uploader.sh upload dump.sql.pgp "$(date "+%Y-%m-%d").sql.pgp"
 
 # Delete old backup from Dropbox
-./dropbox_uploader.sh delete "$(date +"%Y-%m-%d" --date="7 days ago").zip"
+./dropbox_uploader.sh delete "$(date +"%Y-%m-%d" --date="7 days ago").sql.pgp"
 
 # Clean up local files
-rm "${file_name}".*
+rm dump.sql "$(date "+%Y-%m-%d").sql.pgp
+
