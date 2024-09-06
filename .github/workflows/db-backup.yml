@@ -33,7 +33,7 @@ jobs:
           sudo apt install -y postgresql
       - name: Import PGP Key
         run: |
-          echo "${{ secrets.PGP_KEY }}" | gpg --import
+          echo -n "$PGP_KEY" | base64 --decode | gpg --import
       - name: Run Shell Script
         id: shell_script_run
         run: bash ./db-backup.sh
