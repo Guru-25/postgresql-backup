@@ -15,7 +15,8 @@ Assign secrets in Settings -> Secrets and variables -> Actions -> New repository
 | `USERNAME`              |
 | `PASSWORD`              |
 | `DATABASE_NAME`         |
-| `ZIP_PASSWORD`          |
+| `PGP_KEY`               |
+| `PGP_RECIPIENT`         |
 | `DROPBOX_APP_KEY`       | 
 | `DROPBOX_APP_SECRET`    |
 | `DROPBOX_REFRESH_TOKEN` |
